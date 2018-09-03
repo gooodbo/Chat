@@ -64,7 +64,7 @@ public class ChatWindow extends JFrame implements ActionListener, TCPConnectionL
         String msg = fieldText.getText();
         if (msg.equals("")) return;
         fieldText.setText(null);
-        connection.sentString(fieldNickname + ": " + msg);
+        connection.sentString(fieldNickname.getText() + ": " + msg);
 
     }
 
@@ -91,7 +91,7 @@ public class ChatWindow extends JFrame implements ActionListener, TCPConnectionL
     }
 
     private synchronized void PrintMsg(String msg) {
-        
+
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
